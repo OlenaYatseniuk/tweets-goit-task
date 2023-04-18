@@ -1,11 +1,11 @@
 .tweets__list {
-    width: 1236px;
+    max-width: 1280px;
     margin: 0 auto;
 
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 48px;
+    gap: 40px;
 
     text-align: center;
 }

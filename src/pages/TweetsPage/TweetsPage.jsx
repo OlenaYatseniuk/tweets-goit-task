@@ -7,6 +7,7 @@ import { FiArrowLeft } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import TweetsList from "../../components/TweetsList/TweetsList";
 import s from './TweetsPage.module.scss'
+import Loader from "../../components/Loader/Loader";
 
 function TweetsPage() {
   const [users, setUsers] = useState(null);
@@ -20,7 +21,7 @@ function TweetsPage() {
     })();
   }, [])
   if (!users) {
-    return null;
+    return <Loader/>;
   }
   return (<>
   <div className={s.linkWrapper}>

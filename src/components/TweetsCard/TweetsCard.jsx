@@ -4,7 +4,8 @@ import picture2x from "../../assets/pictures/picture2-2x.png";
 import logo1x from "../../assets/pictures/logo-1x.png";
 import logo2x from "../../assets/pictures/logo-2x.png";
 
-function TweetsCard() {
+function TweetsCard({user:{avatar, followers, tweets}}) {
+    // console.log("part in card",user)
   return (
     <li className={s.tweets__container}>
       <picture>
@@ -21,10 +22,10 @@ function TweetsCard() {
       <img
         className={s.tweets__avatar}
         alt="user avatar"
-        src="../../assets/pictures/avatars/avatar2.png"
+        src={`${avatar}`}
       />
-      <p className={s.tweets__tweetsText}>777 Tweets</p>
-      <p className={s.tweets__followers}>100,500 followers</p>
+      <p className={s.tweets__tweetsText}>{tweets} Tweets</p>
+      <p className={s.tweets__followers}>{followers} followers</p>
       <button type="button" className={s.tweets_button}>
         Follow
       </button>

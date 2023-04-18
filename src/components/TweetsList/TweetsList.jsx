@@ -1,14 +1,13 @@
 import TweetsCard from "../TweetsCard/TweetsCard";
-import s from './TweetsList.module.scss'
+import s from "./TweetsList.module.scss";
 
 function TweetsList({ users }) {
-    return (
-        <ul className={s.tweets__list}>
-            {users.map(user => {
-                return <TweetsCard key={user.id} user={user} />
-            })}
-            
-  </ul>
+  return (
+    <ul className={s.tweets__list}>
+      {users.map((user) => {
+        return <TweetsCard key={user.id} user={user} />;
+      })}
+    </ul>
   );
 }
 

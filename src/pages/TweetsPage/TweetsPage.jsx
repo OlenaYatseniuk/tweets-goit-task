@@ -16,7 +16,6 @@ function TweetsPage() {
   useEffect(() => {
     (async () => {
       const data = await getAllUsers();
-      console.log(data)
       setUsers(data);
     })();
   }, [])

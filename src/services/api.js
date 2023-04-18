@@ -7,9 +7,30 @@ const api = axios.create({
 export const getAllUsers = async () => {
   try {
     const { data } = await api.get();
-    // console.log(data);
     return data;
   } catch (err) {
     console.log(err.message);
+  }
+};
+
+export const followUser = async (id, followers) => {
+  try {
+    await api.put(`/${id}`, {
+      followers,
+      isFollowed: true,
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const unFollowUser = async (id, followers) => {
+  try {
+    await api.put(`/${id}`, {
+      followers,
+      isFollowed: false,
+    });
+  } catch (err) {
+    console.error(err);
   }
 };
